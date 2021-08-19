@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             icon: Icon(Icons.person_outline_rounded),
           ),
         ],
-        title: Text('CricBuzz Story UI'),
+        title: Text('CricBuzz UI'),
         backgroundColor: Colors.green[900],
       ),
       body: SingleChildScrollView(
