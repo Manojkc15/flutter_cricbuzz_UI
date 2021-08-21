@@ -411,18 +411,14 @@ class MyApp extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(context).push(_story3());
                             },
-                            child: Wrap(
-                              children: [
-                                Text(
-                                  'Langer, living in the reality of\nthe present',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: .5,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
+                            child: Text(
+                              'Langer, living in the reality of\nthe present',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: .5,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
