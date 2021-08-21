@@ -443,6 +443,7 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(width: 10.0),
           ],
         ),
       ),
