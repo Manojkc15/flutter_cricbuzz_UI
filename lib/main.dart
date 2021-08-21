@@ -292,6 +292,8 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+
+            //Stories...
             Container(
               padding: EdgeInsets.fromLTRB(15.0, 8.0, 0.0, 10.0),
               child: Text(
@@ -364,7 +366,7 @@ class MyApp extends StatelessWidget {
                               'For England, a defeat that will hurt more than most',
                               style: TextStyle(
                                   fontSize: 17.0,
-                                  color: Colors.grey,
+                                  color: Colors.white,
                                   letterSpacing: .35),
                             ),
                             const Divider(
@@ -377,6 +379,72 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+            SizedBox(width: 10.0),
+            Card(
+              color: Colors.black,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                    child: Text(
+                      'JUST-IN THE MOMENT',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        letterSpacing: .5,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 11.0, bottom: 10.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/justin-langer.webp',
+                          width: 120.0,
+                        ),
+                        SizedBox(
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(_story3());
+                            },
+                            child: Wrap(
+                              children: [
+                                Text(
+                                  'Langer, living in the reality of\nthe present',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: .5,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 3.0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(_story3());
+                      },
+                      child: Text(
+                        "As the noise of the Australian head coach's uncertain future rises, he is busy going through the drills of his job calmly",
+                        style: TextStyle(
+                          fontSize: 16.25,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -458,8 +526,8 @@ Route _story2() {
               floating: false,
               expandedHeight: 250.0,
               flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset('assets/england-lost.webp',
-                    fit: BoxFit.cover),
+                background:
+                    Image.asset('assets/england-lost.webp', fit: BoxFit.cover),
               ),
               backgroundColor: Colors.greenAccent.shade700,
               actions: [
@@ -497,6 +565,74 @@ Route _story2() {
                       "That was never a realistic ambition for the home side. Batting out the 60 overs was their only goal. But that task is very different to, say, attempting to chase a target of 200 which is what it could have been. In that case, both teams would have approached things very differently. India's bowlers would have been more worried about conceding runs. Virat Kohli would have had to have more defensive fields. The pressure would not have only been on England's batsmen. The whole dynamic of the final day would have been different.\n\n"
                       "As it was, India sensed their chance and took it superbly. The defeat will take some getting over for England, both because of the manner of it and because, at the start of the day, they had a realistic chance of a victory of their own. Opportunities to defeat this India team do not come round very often. England had one today but they let it slip through their hands. Instead, India have landed a huge blow in the series and England have a sizeable task ahead of them to come back.\n\n"
                       "Some defeats hurt more than others. For a number of reasons, this one will hurt England more than most.\n\n",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        letterSpacing: .25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+Route _story3() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) {
+      return Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              pinned: true,
+              snap: false,
+              floating: false,
+              expandedHeight: 250.0,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset(
+                  'assets/justin-langer.webp',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              backgroundColor: Colors.greenAccent.shade700,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.share),
+                ),
+              ],
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.all(15.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "Langer, living in the reality of the present",
+                      style: TextStyle(
+                        fontSize: 26.0,
+                        letterSpacing: .5,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 13.0),
+                    Text(
+                      "The last of the Australian players had made their way to the makeshift tent. The training paraphernalia too had been dragged away from the nets area by the support staff. The music inside the tent had finally stopped after nearly two hours. So had the laughter and the chatter. They'd been replaced by frantic sounds of bags being packed as some of the Aussies began heading towards the bus.\n\n"
+                      "Justin Langer stood all by himself at the centre of Adelaide Oval No 2, bouncing a footy around. He wore his mask around the neck like a scarf and carried a water bottle in the other hand. Every few times, the football would roll away. Whenever it did, Langer would amble towards the ball, and start kicking it into his right hand. Twice with the left, and then a couple with the right. Then back to bouncing it. It was the only time during the two-and-a-hour session that he looked pensive or at least deep in thought.\n\n"
+                      "Perhaps he was just making the most of a wonderful winter afternoon in the South Australian capital. Maybe he was thinking about getting home to Perth in three days' time. Considering the shape of the ball with him, he could well have also been pondering over how his beloved West Coast Eagles would go in their crucial AFL contest against the Brisbane Lions, with less than an hour for the first siren. But on the back of everything that has transpired in relation to him in Australian cricket over the last 10 or so days, you couldn't help but think that Langer was contemplating his future as coach.\n\n"
+                      "Amidst all the not-so-positive reports and stories emerging around his general disposition around the team, Langer was in a rather cheery mood on Saturday (August 21). So were most of the players on view. It was only their third outdoor visit during quarantine in Adelaide since landing here from Dhaka over 10 days ago. And with temperatures in the range of 18-19 degrees and lovely blue skies above, they couldn't have asked for better conditions to be out and about.\n\n"
+                      "Langer was among the first to step out. And it didn't take him too long to focus his attention entirely on local boy, Alex Carey. With his pink sidearm in tow, Langer guided Australia's latest ODI captain into a net where the two began with a few gentle throwdowns. Wes Agar, meanwhile, was bowling equally gentle seam-up to brother Ashton in the adjacent net.\n\n"
+                      "Langer and Carey, who has been left out of the T20 World Cup squad, then proceeded to have a series of very technical chats. They seemed to centre mainly around the left-hander's head position, especially when he tries to force the ball through the leg-side. Langer seemed to suggest that by managing to keep his head in line with his backfoot, Carey would be more open in his stance while facing a right-armer from over the wicket. That would enable him to play the on-drive and flick from a stronger base rather than risk bringing his bat across his pads, which has been an issue for the wicketkeeper-batsman.\n\n"
+                      "Every 10 or so minutes, Langer would walk down the pitch and get Carey to try out a few different drills, holding the South Australian's head while making his point. Then he'd go back and either chuck a few deliveries at Carey or even underarm a few on the bounce. At one point, Langer took the bat himself, got into his all too familiar stance and began demonstrating what he wanted the batsman to do. He even got Carey to roll a few deliveries to him in the process. He also twice took a break to share a joke with Matthew Wade, who preferred the role of a throwdown specialist to a batsman, in the net next to his.\n\n"
+                      "Langer let Carey walk only after he seemed satisfied with their net, nearly an hour into it. His attention then turned towards the down-on-luck Josh Philippe. The discussions with the right-hander too seemed to focus on his stance, and which shoulder the coach felt the head should be in line with. He even got one of the support staff members to record clips of Philippe batting on his phone, which they would review intermittently.\n\n"
+                      "Not too far away, the fast bowlers started their respective stints with a few sprints before bowling for around half-hour each. Under the keen eye of assistant coach Andrew McDonald, Mitchell Starc and the IPL-bound Nathan Ellis mainly seemed to be bowling their cutters and other variety balls. Josh Hazlewood seemed content with Moises Henriques, Ashton Turner and Ben McDermott were the ones taking turns facing them, before McDonald picked up a sidearm to replace them.\n\n"
+                      "Adam Zampa and Mitchell Marsh spent most of their time indulging in various running drills. Zampa looked at most ease, flashing a thumbs-up sign at the one man and his dog watching the Aussies go through their routines. At one point, it also looked like he was waving at an aeroplane that was landing in Adelaide.\n\n"
+                      "Philippe's crash course under Langer lasted for around half-hour. It ended with the duo going through the final clip of the right-hander driving balls down the ground. Langer then finally put his pink sidearm away, began collecting the four dozen or so balls splayed all around the net. Australia's head coach then struck his customary practice session pose, leaning against a net and watching a couple of his players, Turner and Dan Christian, go through their final drills. It's then that he put his jacket back on, took a few sips of water before grabbing the footy that Zampa had been holding and walking away for some alone time.\n\n"
+                      "Theories and conspiracy theories continue to swirl around Langer's position within the dressing-room. It's possible they'll go on for a little while longer before the cricket season gets underway. And there's little you can make out about someone's mindset watching them throw and kick balls around from over 300 meters out. But for now, purely on Saturday's evidence, Langer seems to be going about the cricketing side of his job with no fuss and enjoying it too.\n\n",
                       style: TextStyle(
                         fontSize: 18.0,
                         letterSpacing: .25,

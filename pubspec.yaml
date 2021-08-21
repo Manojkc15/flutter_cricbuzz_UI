@@ -48,6 +48,7 @@ flutter:
   assets:
     - assets/anderson_5_fer.webp
     - assets/england-lost.webp
+    - assets/justin-langer.webp
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
