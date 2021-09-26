@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'matches/recent.dart';
 import 'matches/upcoming.dart';
 
-void main() => runApp(MaterialApp(
-      theme: ThemeData.dark(),
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ));
+void main() => runApp(
+      MaterialApp(
+        theme: ThemeData.dark(),
+        home: MyApp(),
+        debugShowCheckedModeBanner: false,
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   @override
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
               height: 192.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                padding: EdgeInsets.only(left: 5.0, right: 5.0),
                 children: <Widget>[
                   RecentMatch(
                     series: '2nd Test - India tour of England, 2021',
@@ -96,32 +98,32 @@ class MyApp extends StatelessWidget {
                 style: TextStyle(fontSize: 17.0),
               ),
             ),
-            Card(
-              color: Colors.black,
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(height: 10.0),
-                    Container(
-                      padding: EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        'INDIA TOUR OF ENGLAND 2021',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          letterSpacing: .5,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(_story1()),
+              child: Card(
+                color: Colors.black,
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: 10.0),
+                      Container(
+                        padding: EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'INDIA TOUR OF ENGLAND 2021',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            letterSpacing: .5,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 10.0),
-                    SafeArea(child: Image.asset('assets/anderson_5_fer.webp')),
-                    SizedBox(height: 5.0),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(_story1());
-                      },
-                      child: Container(
-                        padding: EdgeInsets.only(left: 4.0),
+                      SizedBox(height: 10.0),
+                      SafeArea(
+                        child: Image.asset('assets/anderson_5_fer.webp'),
+                      ),
+                      SizedBox(height: 5.0),
+                      Container(
+                        padding: EdgeInsets.only(left: 14.0),
                         child: Column(
                           children: [
                             Text(
@@ -148,94 +150,94 @@ class MyApp extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(_story2());
-                      },
-                      child: Container(
-                        padding: EdgeInsets.only(left: 4.0),
-                        child: Column(
-                          children: [
-                            Text(
-                              'For England, a defeat that will hurt more than most',
-                              style: TextStyle(
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).push(_story2()),
+                        child: Container(
+                          padding: EdgeInsets.only(left: 14.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                'For England, a defeat that will hurt more than most',
+                                style: TextStyle(
                                   fontSize: 17.0,
                                   color: Colors.white,
-                                  letterSpacing: .35),
+                                  letterSpacing: .35,
+                                ),
+                              ),
+                              const Divider(
+                                thickness: .5,
+                                color: Colors.white70,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 10.0),
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(_story3()),
+              child: Card(
+                color: Colors.black,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                      child: Text(
+                        'JUST-IN THE MOMENT',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          letterSpacing: .5,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 11.0, bottom: 10.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/justin-langer.webp',
+                            width: 120.0,
+                          ),
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Langer, living in the reality of the present',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: .5,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                            const Divider(
-                              thickness: .5,
-                              color: Colors.white70,
-                            ),
-                          ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 3.0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(_story3());
+                        },
+                        child: Text(
+                          "As the noise of the Australian head coach's uncertain future rises, he is busy going through the drills of his job calmly",
+                          style: TextStyle(
+                            fontSize: 16.25,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ),
-            SizedBox(width: 10.0),
-            Card(
-              color: Colors.black,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
-                    child: Text(
-                      'JUST-IN THE MOMENT',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        letterSpacing: .5,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 11.0, bottom: 10.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/justin-langer.webp',
-                          width: 120.0,
-                        ),
-                        SizedBox(
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(_story3());
-                            },
-                            child: Text(
-                              'Langer, living in the reality of\nthe present',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: .5,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 3.0),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(_story3());
-                      },
-                      child: Text(
-                        "As the noise of the Australian head coach's uncertain future rises, he is busy going through the drills of his job calmly",
-                        style: TextStyle(
-                          fontSize: 16.25,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
             SizedBox(width: 10.0),
