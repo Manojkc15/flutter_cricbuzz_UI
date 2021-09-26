@@ -33,11 +33,9 @@ class _UpcomingMatchState extends State<UpcomingMatch> {
                 style: TextStyle(color: Colors.grey, fontSize: 15.0),
               ),
               IconButton(
-                onPressed: () {
-                  setState(() {
-                    marked = !marked;
-                  });
-                },
+                onPressed: () => setState(() {
+                  marked = !marked;
+                }),
                 icon: (marked)
                     ? Icon(Icons.notifications_none)
                     : Icon(Icons.notifications, color: Colors.green[800]),

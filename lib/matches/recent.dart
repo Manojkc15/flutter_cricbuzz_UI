@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RecentMatch extends StatefulWidget {
+class RecentMatch extends StatelessWidget {
   final String series, team_1, team_1Score, team_2, team_2Score, result;
   RecentMatch({
     required this.series,
@@ -12,48 +12,27 @@ class RecentMatch extends StatefulWidget {
   });
 
   @override
-  State<RecentMatch> createState() => _RecentMatchState();
-}
-
-class _RecentMatchState extends State<RecentMatch> {
-  bool marked = true;
-
-  @override
   Widget build(BuildContext context) {
     return Container(
       width: 360.0,
       color: Colors.black,
-      margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-      padding: EdgeInsets.only(left: 15.0),
+      margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
+      padding: EdgeInsets.only(left: 15.0,top: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '${widget.series}',
-                style: TextStyle(color: Colors.grey, fontSize: 15.0),
-              ),
-              IconButton(
-                onPressed: () {
-                  setState(() {
-                    marked = !marked;
-                  });
-                },
-                icon: (marked)
-                    ? Icon(Icons.notifications_none)
-                    : Icon(Icons.notifications,color: Colors.green[800],),
-              ),
-            ],
+          Text(
+            '$series',
+            style: TextStyle(color: Colors.grey, fontSize: 15.0),
           ),
+          SizedBox(height: 15.0),
           Row(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${widget.team_1}',
+                    '$team_1',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 20.0,
@@ -61,7 +40,7 @@ class _RecentMatchState extends State<RecentMatch> {
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    '${widget.team_2}',
+                    '$team_2',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -74,7 +53,7 @@ class _RecentMatchState extends State<RecentMatch> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${widget.team_1Score}',
+                    '$team_1Score',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 20.0,
@@ -82,7 +61,7 @@ class _RecentMatchState extends State<RecentMatch> {
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    '${widget.team_2Score}',
+                    '$team_2Score',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -94,7 +73,7 @@ class _RecentMatchState extends State<RecentMatch> {
           ),
           SizedBox(height: 10.0),
           Text(
-            '${widget.result}',
+            '$result',
             style: TextStyle(
               color: Colors.blue,
               fontSize: 16.0,
