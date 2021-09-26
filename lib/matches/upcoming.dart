@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Upcoming extends StatelessWidget {
+class UpcomingMatch extends StatefulWidget {
   final String series, team_1, team_2, time;
-  Upcoming({
+  UpcomingMatch({
     required this.series,
     required this.team_1,
     required this.team_2,
@@ -10,11 +10,17 @@ class Upcoming extends StatelessWidget {
   });
 
   @override
+  State<UpcomingMatch> createState() => _UpcomingMatchState();
+}
+
+class _UpcomingMatchState extends State<UpcomingMatch> {
+  bool marked = true;
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 360.0,
       color: Colors.black,
-      margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
+      margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
       padding: EdgeInsets.only(left: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,19 +29,25 @@ class Upcoming extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '$series',
+                '${widget.series}',
                 style: TextStyle(color: Colors.grey, fontSize: 15.0),
               ),
               IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none),
+                onPressed: () {
+                  setState(() {
+                    marked = !marked;
+                  });
+                },
+                icon: (marked)
+                    ? Icon(Icons.notifications_none)
+                    : Icon(Icons.notifications, color: Colors.green[800]),
               ),
             ],
           ),
           Row(
             children: [
               Text(
-                '$team_1',
+                '${widget.team_1}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
@@ -47,7 +59,7 @@ class Upcoming extends StatelessWidget {
           Row(
             children: [
               Text(
-                '$team_2',
+                '${widget.team_2}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
@@ -57,7 +69,7 @@ class Upcoming extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           Text(
-            '$time',
+            '${widget.time}',
             style: TextStyle(
               color: Colors.amber,
               fontSize: 16.0,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Match extends StatelessWidget {
+class RecentMatch extends StatefulWidget {
   final String series, team_1, team_1Score, team_2, team_2Score, result;
-  Match({
+  RecentMatch({
     required this.series,
     required this.team_1,
     required this.team_1Score,
@@ -12,11 +12,18 @@ class Match extends StatelessWidget {
   });
 
   @override
+  State<RecentMatch> createState() => _RecentMatchState();
+}
+
+class _RecentMatchState extends State<RecentMatch> {
+  bool marked = true;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 360.0,
       color: Colors.black,
-      margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
+      margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
       padding: EdgeInsets.only(left: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,12 +32,18 @@ class Match extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '$series',
+                '${widget.series}',
                 style: TextStyle(color: Colors.grey, fontSize: 15.0),
               ),
               IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none),
+                onPressed: () {
+                  setState(() {
+                    marked = !marked;
+                  });
+                },
+                icon: (marked)
+                    ? Icon(Icons.notifications_none)
+                    : Icon(Icons.notifications,color: Colors.green[800],),
               ),
             ],
           ),
@@ -40,7 +53,7 @@ class Match extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '$team_1',
+                    '${widget.team_1}',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 20.0,
@@ -48,7 +61,7 @@ class Match extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    '$team_2',
+                    '${widget.team_2}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -61,7 +74,7 @@ class Match extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '$team_1Score',
+                    '${widget.team_1Score}',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 20.0,
@@ -69,7 +82,7 @@ class Match extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    '$team_2Score',
+                    '${widget.team_2Score}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -81,7 +94,7 @@ class Match extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           Text(
-            '$result',
+            '${widget.result}',
             style: TextStyle(
               color: Colors.blue,
               fontSize: 16.0,

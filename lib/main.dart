@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.only(left: 15.0, right: 15.0),
                 children: <Widget>[
-                  Match(
+                  RecentMatch(
                     series: '2nd Test - India tour of England, 2021',
                     team_1: 'ENG',
                     team_1Score: '391 & 120',
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
                     result: 'India won by 151 runs',
                   ),
                   SizedBox(width: 10.0),
-                  Match(
+                  RecentMatch(
                     series: '1st Test - Pakistan tour of West Indies, 2021',
                     team_1: 'WI',
                     team_1Score: '253 & 168-9',
@@ -78,88 +78,12 @@ class MyApp extends StatelessWidget {
                     result: 'West Indies won by 1 wkt',
                   ),
                   SizedBox(width: 10.0),
-                  Upcoming(
+                  UpcomingMatch(
                     series: 'Final - Royal London Onde-Day Cup, 2021',
                     team_1: 'Glamorgan',
                     team_2: 'Durham',
                     time: 'Thu, 19 Aug - 5.30 pm',
                   ),
-                  // Container(
-                  //   width: 360.0,
-                  //   color: Colors.black,
-                  //   margin: EdgeInsets.symmetric(vertical: 20.0),
-                  //   padding: EdgeInsets.only(left: 12.0, top: 7.0),
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.start,
-                  //     children: [
-                  //       Text(
-                  //         'Final - Royal London Onde-Day Cup, 2021',
-                  //         style: TextStyle(color: Colors.grey, fontSize: 15.0),
-                  //       ),
-                  //       SizedBox(height: 10.0),
-                  //       Row(
-                  //         children: [
-                  //           Text(
-                  //             'Glamorgan',
-                  //             style: TextStyle(
-                  //               color: Colors.white,
-                  //               fontSize: 20.0,
-                  //             ),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //       SizedBox(height: 10.0),
-                  //       Row(
-                  //         children: [
-                  //           Text(
-                  //             'Durham',
-                  //             style: TextStyle(
-                  //               color: Colors.white,
-                  //               fontSize: 20.0,
-                  //             ),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //       SizedBox(height: 10.0),
-                  //       Text(
-                  //         'Thu, 19 Aug - 5.30 pm',
-                  //         style: TextStyle(
-                  //           color: Colors.amber,
-                  //           fontSize: 16.0,
-                  //         ),
-                  //       ),
-                  //       // SizedBox(height: 10.0),
-                  //       Container(
-                  //         padding: EdgeInsets.only(left: 80.0),
-                  //         child: Row(
-                  //           children: [
-                  //             TextButton(
-                  //               onPressed: () {},
-                  //               child: Text(
-                  //                 'POINTS TABLE',
-                  //                 style: TextStyle(
-                  //                   color: Colors.grey,
-                  //                   fontSize: 18.0,
-                  //                 ),
-                  //               ),
-                  //             ),
-                  //             SizedBox(width: 15.0),
-                  //             TextButton(
-                  //               onPressed: () {},
-                  //               child: Text(
-                  //                 'SCHEDULE',
-                  //                 style: TextStyle(
-                  //                   color: Colors.grey,
-                  //                   fontSize: 18.0,
-                  //                 ),
-                  //               ),
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                 ],
               ),
             ),
