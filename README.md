@@ -1,4 +1,4 @@
-# cricbuzz_story
+# cricbuzz_ui
 
 A new Flutter project.
 
